@@ -7,11 +7,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @Slf4j
-@Import(BeanDefinitionRegistrar.class)
 public class SpringRegistrarApplication implements ApplicationRunner {
 
     public static void main(String[] args) {

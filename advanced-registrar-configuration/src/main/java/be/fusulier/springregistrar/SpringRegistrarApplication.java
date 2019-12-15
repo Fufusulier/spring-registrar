@@ -7,11 +7,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @Slf4j
-@Import(BeanDefinitionRegistrar.class)
+@EnableSpecialClassesScanning("be.fusulier.springregistrar")
 public class SpringRegistrarApplication implements ApplicationRunner {
 
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class SpringRegistrarApplication implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
 
-        SimpleBean simpleBean = applicationContext.getBean(SimpleBean.class);
-        simpleBean.hello();
+        SpecialClass bean = applicationContext.getBean(SpecialClass.class);
+        bean.hello();
     }
 }
